@@ -4,7 +4,7 @@
         <title>VoiceInk</title>
         <item>
             <title>2.1</title>
-            <pubDate>Tue, 28 Jul 2026 11:25:55 +0000</pubDate>
+            <pubDate>Tue, 28 Jul 2026 11:43:32 +0000</pubDate>
             <link>https://github.com/AhsanFazal/homebrew-tap</link>
             <sparkle:version>20100</sparkle:version>
             <sparkle:shortVersionString>2.1</sparkle:shortVersionString>
@@ -19,7 +19,7 @@
 </ul>
 <hr><p>Built against whisper.cpp v1.9.1.</p>
 ]]></description>
-            <enclosure url="https://github.com/AhsanFazal/homebrew-tap/releases/download/voiceink-v2.1/VoiceInk.dmg" length="25870553" type="application/octet-stream" sparkle:edSignature="xb0aIFXuiGeF/goSzsrvD8snorZArhW1wkmDd6yCFO5ENqxkUgp80vIkxsrGgh8w0kr6dqesff+vkTN166ldCQ=="/>
+            <enclosure url="https://github.com/AhsanFazal/homebrew-tap/releases/download/voiceink-v2.1/VoiceInk.dmg" length="25870559" type="application/octet-stream" sparkle:edSignature="iSjRjIWh7I3dz8lpcEbl/nDHuveL4J7O4ozvUue6MsGaaM/FAX6LdKbwcGC8EKECbI7cF02QjJG72IjRr2j1DA=="/>
         </item>
     </channel>
 </rss>
