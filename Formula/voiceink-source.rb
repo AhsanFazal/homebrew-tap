@@ -62,10 +62,18 @@ class VoiceinkSource < Formula
     # MARKETING_VERSION/CURRENT_PROJECT_VERSION at build time, not before
     # tagging) — v2.1's pbxproj still says 2.0/205. Override for stable
     # builds only; HEAD tracks main's pbxproj as-is (it's dev-channel by
-    # definition, no fixed version to assert).
+    # definition, no fixed version to assert). The encoding below is OUR OWN
+    # scheme (not upstream's — upstream's own 2.0 build shipped as
+    # CURRENT_PROJECT_VERSION 205, which this formula doesn't reproduce or
+    # need to), chosen only for two properties: no collision between
+    # distinct versions at double-digit minor/patch (e.g. 2.10 and 3.0 must
+    # not both encode to 300), and monotonic increase so Sparkle's numeric
+    # sparkle:version comparison keeps ordering releases correctly against
+    # upstream's own published build numbers (e.g. above the already-shipped
+    # 210). Must match the private repo's release workflow's encoding.
     if build.stable?
       parts = version.to_s.split(".").map(&:to_i)
-      project_version = (parts[0] * 100) + ((parts[1] || 0) * 10) + (parts[2] || 0)
+      project_version = (parts[0] * 10000) + ((parts[1] || 0) * 100) + (parts[2] || 0)
       args += ["MARKETING_VERSION=#{version}", "CURRENT_PROJECT_VERSION=#{project_version}"]
     end
 
@@ -116,7 +124,7 @@ class VoiceinkSource < Formula
   test do
     app = prefix/"VoiceInk.app"
     assert_path_exists app/"Contents/MacOS/VoiceInk"
-    system "codesign", "--verify", "--strict", app.to_s
+    system "codesign", "--verify", "--deep", "--strict", app.to_s
     identity = shell_output("codesign -dv #{app} 2>&1")
     assert_match(/^TeamIdentifier=9WAKQUB788$/, identity)
     feed = shell_output("/usr/libexec/PlistBuddy -c 'Print :SUFeedURL' #{app}/Contents/Info.plist").strip
