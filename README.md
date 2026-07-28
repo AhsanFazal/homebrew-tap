@@ -21,7 +21,7 @@ Apps update themselves in-app (Sparkle). `brew upgrade` works as well; the
 two don't conflict.
 
 On first launch, macOS asks once for microphone, accessibility, and
-screen-recording permissions. Grants persist across updates.
+screen-recording permissions. Grants should persist across updates.
 
 ## Source
 
