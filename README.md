@@ -11,9 +11,8 @@ brew tap ahsanfazal/tap
 | Package | Type | Install |
 |---------|------|---------|
 | [VoiceInk](https://tryvoiceink.com/) | Cask | `brew install --cask ahsanfazal/tap/voiceink` |
-| voiceink-source | Formula | Source build of VoiceInk (`--HEAD` supported); see formula caveats |
 
-Use the fully-qualified names shown above — `homebrew/cask` ships an
+Use the fully-qualified name shown above — `homebrew/cask` ships an
 unrelated `voiceink` cask that a bare name would resolve to.
 
 ## Updates
@@ -28,7 +27,7 @@ screen-recording permissions. Grants persist across updates.
 
 VoiceInk is built from the unmodified upstream source of
 [Beingpax/VoiceInk](https://github.com/Beingpax/VoiceInk) (GPL-3.0) at each
-release tag, using upstream's own local-build mode. The build scripts are
-attached to every [release](../../releases); together with the upstream tag
-tarball they are the complete corresponding source. Not affiliated with the
-upstream author.
+release tag, using upstream's own local-build mode. The exact build scripts
+used are attached to every [release](../../releases); together with the
+upstream tag tarball they are the complete corresponding source. Not
+affiliated with the upstream author.
