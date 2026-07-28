@@ -8,26 +8,12 @@ brew tap ahsanfazal/tap
 
 ## Packages
 
-| Package | Type | Install |
-|---------|------|---------|
-| [VoiceInk](https://tryvoiceink.com/) | Cask | `brew install --cask ahsanfazal/tap/voiceink` |
+| Package | Install |
+|---------|---------|
+| [VoiceInk](https://tryvoiceink.com/) | `brew install --cask ahsanfazal/tap/voiceink` |
 
-Use the fully-qualified name shown above — `homebrew/cask` ships an
-unrelated `voiceink` cask that a bare name would resolve to.
+Use fully-qualified names — some package names also exist in the official
+Homebrew repositories and a bare name may resolve there instead.
 
-## Updates
-
-Apps update themselves in-app (Sparkle). `brew upgrade` works as well; the
-two don't conflict.
-
-On first launch, macOS asks once for microphone, accessibility, and
-screen-recording permissions. Grants should persist across updates.
-
-## Source
-
-VoiceInk is built from the unmodified upstream source of
-[Beingpax/VoiceInk](https://github.com/Beingpax/VoiceInk) (GPL-3.0) at each
-release tag, using upstream's own local-build mode. The exact build scripts
-used are attached to every [release](../../releases); together with the
-upstream tag tarball they are the complete corresponding source. Not
-affiliated with the upstream author.
+Per-package details (updates, permissions, licensing) are shown at install
+time and on each [release](../../releases).
