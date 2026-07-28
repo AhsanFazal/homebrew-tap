@@ -1,6 +1,6 @@
 cask "voiceink" do
   version "2.1"
-  sha256 "57af9e9cefe4baee80026f6db005764fe83cea38fc15fbe3ac4d88e984996fb1"
+  sha256 "db1847870f5de7a80b0026c76ddcc5db193b98e1f42afeee3e7285bc7c80388d"
 
   url "https://github.com/AhsanFazal/homebrew-tap/releases/download/voiceink-v#{version}/VoiceInk.dmg",
       verified: "github.com/AhsanFazal/homebrew-tap/"
