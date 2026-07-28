@@ -1,2 +1,27 @@
 <?xml version="1.0" standalone="yes"?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>VoiceInk</title></channel></rss>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>VoiceInk</title>
+        <item>
+            <title>2.0</title>
+            <pubDate>Tue, 28 Jul 2026 08:07:56 +0000</pubDate>
+            <link>https://github.com/AhsanFazal/homebrew-tap</link>
+            <sparkle:version>205</sparkle:version>
+            <sparkle:shortVersionString>2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[<ul>
+  <li>🗣️ Fixed Apple Speech related issue</li>
+  <li>⚙️ Improved mode setup, availability, and model selection.</li>
+  <li>🌐 Added Dia browser support for URL-based mode triggers.</li>
+  <li>🤖 Added support for latest gemini enhancement models</li>
+  <li>🛠️ Minor improvements and bug fixes.</li>
+</ul>
+
+---
+Built against whisper.cpp v1.9.1.
+]]></description>
+            <enclosure url="https://github.com/AhsanFazal/homebrew-tap/releases/download/voiceink-v2.1/VoiceInk.dmg" length="25847358" type="application/octet-stream" sparkle:edSignature="Zi+vi72s5eo4Jbo8kDNzgvNOiwWHxq2Mrh5tLNqVka5XuX4FqcqhqA3CGeNCdqfHUIF+R/KQR3eByI7oXm3sDQ=="/>
+        </item>
+    </channel>
+</rss>
