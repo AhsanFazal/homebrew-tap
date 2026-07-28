@@ -7,10 +7,15 @@ distributed through my own Homebrew tap with my own Sparkle update feed.
 [Beingpax/VoiceInk](https://github.com/Beingpax/VoiceInk) (GPL-3.0). Builds
 here use the upstream project's own author-sanctioned `LOCAL_BUILD`
 source-build path (a licensed, no-purchase local build mode upstream itself
-ships) — not a crack or a bypass. Every release on this repo has the
-unmodified upstream source tarball and the exact patch scripts used to build
-it attached as release assets (GPL source offer); the build pipeline itself
-lives in a separate, private repo (CI, signing secrets).
+ships) — not a crack or a bypass. Every release on this repo attaches the
+exact patch scripts used to build it. The unmodified upstream source itself
+isn't re-hosted here — it's upstream's own tag tarball, at
+`github.com/Beingpax/VoiceInk/archive/refs/tags/<tag>.tar.gz` (browse tags:
+[Beingpax/VoiceInk/tags](https://github.com/Beingpax/VoiceInk/tags)). GPLv3
+permits pointing to where the source is available rather than re-bundling
+it; the tag tarball plus the attached patch scripts together are the
+complete corresponding source for what's shipped here. The build pipeline
+itself lives in a separate, private repo (CI, signing secrets).
 
 ## Install
 
@@ -38,8 +43,8 @@ harmless.
 accessibility, and screen-recording permissions once, since this is a
 different code-signing identity than any prior install of VoiceInk you may
 have had. Grant them when prompted. After that first grant, permissions
-persist across every future update — this build uses a stable signing
-identity, so macOS doesn't treat updates as a new app.
+should persist across future updates — macOS keys TCC grants to the app's
+signing identity, and this build keeps a stable one across releases.
 
 ## voiceink-source (advanced)
 
@@ -51,9 +56,21 @@ changes — the cask above is the primary, recommended install path.
 It currently **cannot complete `brew install` on a default-prefix Homebrew
 install** (the common case on Apple Silicon Macs): `xcodebuild`'s own Swift
 Package Manager sandbox can't nest inside Homebrew's own build sandbox, a
-known Homebrew/Xcode limitation, not a bug in this formula. See the
-formula's own `caveats` (shown after a failed or attempted install) for the
-full explanation and the bare-build workaround.
+known Homebrew/Xcode limitation, not a bug in this formula — seven distinct
+workarounds were tried and falsified, so there is no `brew install`-side
+fix. See the formula's own `caveats` (shown after a failed or attempted
+install) for the full explanation and a link to the upstream Homebrew
+discussion.
+
+For a manual, brew-free build of `main`, skip `brew` entirely and use
+upstream's own tooling plus this tap's patch script:
+
+```sh
+git clone https://github.com/Beingpax/VoiceInk.git
+cd VoiceInk
+bash /path/to/homebrew-tap/scripts/patch-voiceink.sh "$PWD"   # Sparkle repoint + signing patches, same as CI
+make local                                                     # upstream's own ad-hoc local-build target, no Apple Developer cert required
+```
 
 ## Uninstall
 
